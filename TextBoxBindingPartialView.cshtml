@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TestPartialView.Models.TextBoxBinding>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+          @*<th>
+              @Html.DisplayNameFor(model => model.TextBoxID)
+          </th>
+          <th>
+              @Html.DisplayNameFor(model => model.TextBoxValue)
+          </th>*@
+          <th></th>
+        </tr>
+    <tr>
+      <th>
+            Enter your name:
+            @Html.TextBox("name", "")
+        </th>
+        <th>
+        <input id="Button1" type="button" value="button" />
+       </th>
+     
+    </tr>
+
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TextBoxID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TextBoxValue)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+    }
+    </table>

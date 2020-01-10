@@ -1,0 +1,74 @@
+﻿
+@model TestPartialView.Models.TextBoxBinding
+@{
+    //Layout = null;
+    ViewBag.Title = "Index";
+}
+<style>
+    .col-6 {
+        background-color: bisque;
+        border-width: 1px;
+        border-color: black;
+        border-style: groove;
+        padding-top: 2px;
+        padding-bottom: 4px;
+    }
+
+    .ul-li {
+        border-radius: 25px;
+        margin-bottom: 10px;
+    }
+
+    .anyClass {
+      height:80px;
+      overflow-y: scroll;
+    }
+</style>
+@*@{
+    Html.RenderAction("_TestIndex", new { viewModel = Model });
+}*@
+
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group form-inline">
+                        <label for="Name">Name</label>
+                        <input class="form-control" id="Name" name="Name" placeholder="Name" type="text" value="" style="border: outset" width="100">
+                        <button type="button" id="btnAdd" name="btnAdd" class="btn btn-success"><i class="fa fa-plus"></i> Add</button>
+                        <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-4 col-6">
+                    <div class="form-group">
+                        <ul class="list-group list-inline anyClass" id="listGroup">
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button type="button" id="btnSubmit" name="btnSubmit" class="btn btn-success"><i class="fa fa-plus"></i> Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/test")
+}
